@@ -1,0 +1,289 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VOGUE ARCHIVE | Styling Intelligence</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Editorial Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #f5f5f7;
+        }
+
+        .editorial-title {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.15em;
+        }
+
+        .editorial-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #141414;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 2px;
+        }
+
+        .typing {
+            opacity: 0.7;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+
+<body class="h-screen flex flex-col overflow-hidden">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header
+        class="border-b border-neutral-800 bg-[#0f0f0f]/90 backdrop-blur-md
+        px-6 py-4 flex items-center justify-between z-10"
+    >
+
+        <div class="flex items-center space-x-3">
+
+            <span
+                class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"
+            ></span>
+
+            <span
+                class="text-xs uppercase tracking-[0.3em] text-neutral-400"
+            >
+                RAG Knowledge System v2.0
+            </span>
+
+        </div>
+
+
+        <h1
+            class="editorial-title text-2xl md:text-3xl
+            font-bold tracking-widest text-center uppercase"
+        >
+            V O G U E
+        </h1>
+
+
+        <div
+            class="text-xs uppercase tracking-[0.2em]
+            text-neutral-400 hidden sm:block"
+        >
+            Styling Intelligence
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= CHAT ================= -->
+
+    <main
+        id="chat-container"
+        class="flex-1 overflow-y-auto px-4 md:px-24 py-8
+        space-y-6 max-w-5xl mx-auto w-full"
+    >
+
+
+        <!-- Welcome Message -->
+
+        <div class="flex items-start space-x-4">
+
+            <div
+                class="w-8 h-8 rounded-full bg-neutral-200
+                text-neutral-900 flex items-center justify-center
+                editorial-serif font-bold text-sm shrink-0"
+            >
+                V
+            </div>
+
+
+            <div
+                class="bg-neutral-900 border border-neutral-800
+                p-5 rounded-sm max-w-2xl shadow-xl"
+            >
+
+                <p
+                    class="editorial-serif italic text-lg
+                    text-neutral-200 mb-2"
+                >
+                    "Style is a way to say who you are without having to speak."
+                </p>
+
+
+                <p
+                    class="text-sm text-neutral-400 leading-relaxed"
+                >
+                    Welcome to the Vogue Styling Archive.
+                    Ask questions about seasonal colour analysis,
+                    body silhouettes, chromatic distribution,
+                    cranial framing techniques, or capsule wardrobe
+                    curation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= SUGGESTED QUESTIONS ================= -->
+
+    <div
+        class="max-w-5xl mx-auto w-full px-4 md:px-24 pb-3
+        flex flex-wrap gap-2"
+    >
+
+        <button
+            onclick="sendPreset('What colors suit the Autumn seasonal palette?')"
+            class="text-xs uppercase tracking-wider
+            bg-neutral-900 hover:bg-neutral-800
+            border border-neutral-800 text-neutral-300
+            px-3 py-1.5 rounded-sm transition"
+        >
+            Autumn Color Palette
+        </button>
+
+
+        <button
+            onclick="sendPreset('Explain the 60-30-10 color distribution rule.')"
+            class="text-xs uppercase tracking-wider
+            bg-neutral-900 hover:bg-neutral-800
+            border border-neutral-800 text-neutral-300
+            px-3 py-1.5 rounded-sm transition"
+        >
+            60-30-10 Rule
+        </button>
+
+
+        <button
+            onclick="sendPreset('What are the masculine capsule wardrobe essentials?')"
+            class="text-xs uppercase tracking-wider
+            bg-neutral-900 hover:bg-neutral-800
+            border border-neutral-800 text-neutral-300
+            px-3 py-1.5 rounded-sm transition"
+        >
+            Men Capsule Core
+        </button>
+
+
+        <button
+            onclick="sendPreset('Describe the butterfly haircut styling effect.')"
+            class="text-xs uppercase tracking-wider
+            bg-neutral-900 hover:bg-neutral-800
+            border border-neutral-800 text-neutral-300
+            px-3 py-1.5 rounded-sm transition"
+        >
+            Butterfly Haircut
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= INPUT ================= -->
+
+    <footer
+        class="border-t border-neutral-800 bg-[#0f0f0f]
+        px-4 md:px-24 py-4"
+    >
+
+        <form
+            id="chat-form"
+            class="max-w-5xl mx-auto flex items-center gap-3"
+        >
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Consult the archive..."
+                class="flex-1 bg-neutral-900
+                border border-neutral-800
+                text-neutral-100
+                placeholder-neutral-500
+                text-sm px-4 py-3.5 rounded-sm
+                focus:outline-none focus:border-neutral-600
+                transition"
+                autocomplete="off"
+                required
+            >
+
+
+            <button
+                id="send-button"
+                type="submit"
+                class="bg-neutral-100
+                hover:bg-white
+                text-neutral-950
+                uppercase tracking-widest
+                text-xs font-semibold
+                px-6 py-3.5 rounded-sm
+                transition duration-200 shrink-0"
+            >
+                Inquire
+            </button>
+
+        </form>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const chatContainer =
+            document.getElementById("chat-container");
+
+        const userInput =
+            document.getElementById("user-input");
+
+        const sendButton =
+            document.getElementById("send-button");
+
+        const chatForm =
+            document.getElementById("chat-form");
+
+
+
+        /*
+        ==============================================
+        APPEND MESSAGE
+        ==============================================
+        */
+
+        function appendMessage(sender, text) {
+
+            const isUser = sender === "user";
+
+
+            const messageDiv =
+                document.createElement("div");
+
+
+            mes
+
