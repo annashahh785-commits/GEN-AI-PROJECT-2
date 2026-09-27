@@ -1,6 +1,6 @@
 # FASHION STYLIST KNOWLEDGE BASE & SYSTEM MANUAL (MALE & FEMALE)
 **System Identifier:** FS-RAG-2026-V2  
-**Domain:** Fashion Styling, Image Consulting, and Wardrobe Curation (
+**Domain:** Fashion Styling, Image Consulting, and Wardrobe Curation 
 **Document Classification:** Technical Retrieval-Augmented Generation (RAG) Corpus  
 
 ---
@@ -18,7 +18,7 @@ This document serves as an authoritative, structured knowledge base designed spe
 
 ---
 
-## SECTION 2: CRANIAL FRAMING & HAIR-SCULPTING TECHNIQUES (UNISEX)
+## SECTION 2: CRANIAL FRAMING & HAIR-SCULPTING TECHNIQUES 
 
 Hair acts as a permanent structural accessory that alters perceived facial geometry across all styles and cuts.
 
